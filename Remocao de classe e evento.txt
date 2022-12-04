@@ -1,0 +1,15 @@
+Como utilizar o evento para colocar uma classe e após clicar sobre o elemento remove-la?
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ linksInternos.forEach((link) => {
+        link.classList.remove('ativo')
+    })
+
+- Cria um forEach dentro do evento
+- Utiliza o atributo "remove" para remover
+- Passa a classe que quer remover
+
+Clicar em um link, adicionar uma classe e ao clicar em outro item remover a classe 
+do item anterior e adicionar no item clicado.
+
+Ex: Quando clicar no link1 adicionar a classe "verdadeiro", ao clicar no link2 adicionar a classe "verdadeiro"
+e remover a classe do link1.

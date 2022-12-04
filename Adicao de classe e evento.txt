@@ -1,0 +1,22 @@
+Adicionar evento de adição de classe ao clicar na tela
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+const linksInternos = document.querySelectorAll('[href^="#"]')
+
+function linkAtivo(event) {
+    event.preventDefault()
+    event.currentTarget.classList.add('ativo')
+}
+
+linksInternos.forEach((link) => {
+    link.addEventListener('click', linkAtivo)
+})
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+- Primeiro cria uma constante para selecionar o elemento(neste caso foi os links internos)
+- Em seguida, cria um loop utilizando o forEach para que o evento passe sobre todos os elementos
+- Por fim, cria uma função com o evento:
+	 * Utiliza o "currentTarget" para colocar um "alvo" a ser selecionado, ao percorrer o loop. 
+		Ex: Seleciona um conjunto de links que podem "ouvir" o evento, mas que só aconteça quando for executado(click)
+	* Utiliza ".classList.add('classe')" para realizar a adição da classe para o elemento quando o evento ocorrer.
