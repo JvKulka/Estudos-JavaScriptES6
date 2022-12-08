@@ -85,7 +85,7 @@ li.innerText; // String
 li.value; // Number
 li.hidden; // Boolean
 li.offsetLeft; // Number
-li.click(); // Function
+li.click(); // Undefined
 
 // Qual o construtor do dado abaixo:
-li.hidden.constructor.name;
+li.hidden.constructor.name; // String
