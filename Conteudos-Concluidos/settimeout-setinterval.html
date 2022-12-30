@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    body {
+        background: rgb(43, 43, 48);
+    }
+
+    /* body.vermelho {
+        background: rgb(43, 43, 48);
+    } */
+
+    div {
+        justify-content: center;
+        color: white;
+        text-align: center;
+    }
+
+    div h1 {
+        font-size: 40px;
+        color: blueviolet;
+    }
+
+    .p-começar {
+        font-size: 25px;
+    }
+
+    .time {
+        font-size: 35px;
+    }
+
+    div button {
+        padding: 15px;
+        color: white;
+        width: 150px;
+        border-radius: 10px;
+        border: none;
+        margin: 10px;
+        font-weight: bold;
+        box-shadow: 5px 5px 8px 0px rgba(0, 0, 0, 0.404);
+        cursor: pointer;
+        background: blueviolet;
+    }
+</style>
+
+<body>
+    <div>
+        <h1>Cronômetro</h1>
+        <p class="p-começar">Clique para começar</p>
+
+        <p class="time">00.00</p>
+        <button class="iniciar">Iniciar</button>
+        <button class="pausar">Pausar</button>
+    </div>
+    <script src="settimeout-setinterval.js"></script>
+</body>
+
+</html>
