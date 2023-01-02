@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <style>
+        label {
+            display: block;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            margin-bottom: .5rem;
+            margin-top: 1rem;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            box-sizing: border-box;
+            padding: .5rem;
+            border: 3px solid #000;
+            font-size: 1rem;
+            margin-bottom: .5rem;
+        }
+
+        textarea {
+            height: 150px;
+        }
+
+        .invalido {
+            border-color: red;
+        }
+    </style>
+
+    <form name="contato" id="contato">
+        <label for="nome">Nome</label>
+        <input type="text" name="nome" id="nome" required>
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" required>
+        <label for="mensagem">Mensagem</label>
+        <textarea name="mensagem" id="mensagem"></textarea>
+        <label for="cor">Selecione a cor</label>
+        <input name="cor" type="color">
+        <select name="cores" id="cores">
+            <option value="blue">Azul</option>
+            <option value="red">Vermelho</option>
+        </select>
+
+        <!-- Checkbox -->
+        <label for="identidade">Possui identidade?</label>
+        <input type="checkbox" value="identidade" id="identidade">
+        <label for="casado">Casado?</label>
+        <input type="checkbox" value="casado" id="casado">
+        <p>------------------------------------------------</p>
+        <!-- Radio -->
+        <label for="guitarra">Guitarra</label>
+        <input type="radio" value="guitarra" id="guitarra" name="instrumentos">
+        <label for="violao">Violão</label>
+        <input type="radio" value="violao" id="violao" name="instrumentos">
+    </form>
+
+    <script>
+        const contato = document.querySelector('#contato')
+        const texto = document.querySelector('.texto')
+        const dados = {}
+        function handleChange(event) {
+            //Seleciona o target do evento
+            const target = event.target
+
+            //Se o valor do target for false ele adiciona uma borda vermelha
+            //indicando para o usuário q está errado
+            if (!target.checkValidity()) {
+                target.classList.add('invalido')
+                contato.nome.setCustomValidity('É necessário adicionar o nome')
+                target.nextElementSibling.innerText = target.validationMessage
+            }
+
+            //Seleciona o local para pegar o value do input
+            //texto.innerText = event.target.value
+
+            //Realiza a alteração da cor do background
+            document.body.style.backgroundColor = event.target.value
+
+            // Pega o value passado no checkbox
+            if (event.target.checked) {
+                console.log(event.target.value)
+            }
+
+            //Selecionar todos os dados que o usuário passou no form
+            dados[event.target.name] = event.target.value
+            console.log(dados)
+        }
+
+        //Pegar valor do imput e colocar em outro lugar
+        contato.addEventListener('change', handleChange)
+    </script>
+
+</body>
+
+</html>
