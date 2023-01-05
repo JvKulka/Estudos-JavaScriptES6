@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch</title>
+</head>
+
+<body>
+    <style>
+
+    </style>
+
+    <div class="conteudo"></div>
+
+    <script>
+
+        //Selecionou a API externa com o Fetch
+        const cep = fetch('https://viacep.com.br/ws/83606598/json/')
+
+        //Transforma o que está dentro do fetch em texto/json
+        cep.then(resolucao => resolucao.json())
+            .then(body => {
+                const conteudo = document.querySelector('.conteudo')
+                conteudo.innerText = body.logradouro
+            }) 
+    </script>
+</body>
+
+</html>
