@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validar CPF</title>
+</head>
+
+<body>
+
+    <style>
+        div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        form {
+            border: 1px solid black;
+            padding: 30px 30px 50px 30px;
+            background: rgb(52, 80, 158);
+            border-radius: 10px;
+            box-shadow: 0 5px 10px 0.5px rgba(0, 0, 0, 0.5);
+        }
+
+        label {
+            display: block;
+            font-family: 'IBM Plex Mono';
+            font-weight: bold;
+            margin: 10px 0 5px 0;
+            color: white;
+        }
+
+        input {
+            width: 100%;
+            padding: 5px;
+            border: 2px solid black;
+            font-size: 1em;
+            box-sizing: border-box;
+        }
+
+        input.erro {
+            border-color: red;
+        }
+
+        input.valido {
+            border-color: rgb(76, 211, 71);
+        }
+
+        input::placeholder {
+            color: rgba(0, 0, 0, 0.2);
+        }
+
+        .erro-text {
+            display: none;
+            font-family: 'IBM Plex Mono';
+            font-size: .875rem;
+            color: red;
+        }
+
+        .erro-text.ativo {
+            display: block;
+        }
+    </style>
+
+    <div>
+        <form action="">
+            <label for="cpf">CPF</label>
+            <input type="text" name="cpf" id="cpf" placeholder="000.000.000-00">
+
+            <label for="email">Email</label>
+            <input type="text" name="email" id="email">
+        </form>
+    </div>
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>
